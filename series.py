@@ -44,9 +44,9 @@ def plot_serie(dates,values,style='b-'):
  
  dates_serie = []
  values_serie = []
- for i in range(dates):
+ for i in range(len(dates)):
   dates_serie.append(parse_date(dates[i]))
-  values_serie.append(float(values[i]));
+  values_serie.append(float(values[i]))
  
  plt.plot(dates_serie,values_serie,style)
  plt.show()
@@ -56,9 +56,9 @@ def parse_date(date):
 
 def consistency_check(l1,l2):
  if len(l1) <> len(l2):
-  print "Inconsistent data, some data vs values has different sizes %s and %s " %(len(serie[0]),len(serie[1]))
+  print "Inconsistent data, some data vs values has different sizes %s and %s " %(len(l1),len(l2))
   return False 
-
+ return True
 
 def moving_average(step, keys, values):
  
